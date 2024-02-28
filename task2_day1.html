@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+       * {
+         box-sizing: border-box;
+        }
+
+body {
+  font-family: "Helvetica";
+  padding: 30px;
+  background: #f1e0e0;
+}
+
+.header {
+  padding: 1px;
+  font-size: 35px;
+  text-align: center;
+  background: #f1e0e0;
+}
+
+.left{
+  float: left;
+  width: 75%;
+}
+
+.right{
+  float: left;
+  width: 25%;
+  padding-left: 25px;
+}
+
+.articles {
+  background-color: #f7c7c7;
+  width: 100%;
+  padding: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.box1 {
+  background-color: white;
+  padding: 25px;
+  margin-top: 25px;
+  text-decoration: none;
+}
+
+.box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer {
+  padding: 30px;
+  text-align: center;
+  background: #e9e6e6;
+  margin-top: 40px;
+}
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>BlogSite</h1>
+      </div>
+      <hr>
+      <div class="box">
+        <div class="left">
+          <div class="box1">
+            <h1>Objects and it's internal representation in Javascript</h1>
+            <p style="font-size: large;">February 23, 2024</p>
+            <p style="font-size: larger;"><b>JavaScript Objects</b></p>
+            <p>One of the data types in JavaScript is the <b>Object</b> type. More complicated entities and different collections are stored there. The object initializer / literal syntax or the Object() constructor can be used to create objects.<br><br> JavaScript variables are the containers for the data values. Moreover, objects are variables but objects can have several values.</p>
+            <p>JavaScript follows a basic object-based design paradigm. A property is an association between a name (or key) and a value, while an object is a collection of properties.<br><br>A reference or pointer to the reference value is assigned to variables that have been granted one. The address in memory where the object is kept is indicated by that reference, also known as a pointer. The value is not actually stored in the variables. Objects can hence be defined as an unordered collection of linked data in the form of "key: value" pairs, of primitive or reference types, in JavaScript. In the context of an object, these keys are referred to as properties or methods, respectively, and might be variables or functions.</p>
+            <p style="font-size: larger;"><b><br>Working with Objects</b></p>
+            <p>When the value of a property is a function, the property is referred to as a method. Like with many other programming languages, objects in JavaScript can be thought of as real-world equivalents. An object is a stand-alone entity with properties and a type in JavaScript.</p>
+            <p>The following code assigns many values <b>(Fiat, 500, white)</b> to a variable named car:</p>
+            <p><b>car = {type:"Fiat", model:"500", color:"white"};</b><br><br>Values are written as, name:value pairs (name and value separated by a colon).</p>
+            <p style="font-size: larger;"><b><br>Objects and properties</b></p>
+            <p>An object's associated variable can be used to describe one of its properties. The qualities of an object are determined by its properties. An object's properties can be accessed using a dot notation:<br><br>objectName.propertyName</p>
+            <p>A property can be defined by assigning it a value. For example, an object named myCar is created and given the properties, named make, model, and year as follows:</p>
+            <p><b>var myCar = new Object();<br>
+              myCar.make = 'Fiat';<br>
+              myCar.model = '500';<br>
+              myCar.year = 2000;</b></p>
+            <p>The properties of an object which are unassigned are undefined (and not null).</p>
+            <p style="font-size: larger;"><b><br>Creating Objects in JavaScript</b></p>
+            <p><b>a. Create Objects with Object Literal,</b> by simply defining the property and values inside curly braces as follows:</p>
+            <p><b>let bike = {name: 'Sporty', maker:'Hudson', engine:'900cc'};</b></p><br>
+            <p><b>b. Create Objects with Constructor,</b> with help of new keyword. Constructor is nothing but a function which allows to create multiple objects of the same categor as follows:</p>
+            <p><b>function Vehicle(name, maker) {<br>
+              this.name = name;<br>
+              this.maker = maker;<br>
+            }<br>
+           let car1 = new Vehicle('Swift', 'Maruti');<br>
+           let car2 = new Vehicle('Creta', 'Hyundai');<br>
+           console.log(car1.name); &nbsp;&nbsp;   //Output: Swift<br>
+           console.log(car2.name); &nbsp;&nbsp;   //Output: Creta</b></p><br>
+           <p><b>c. By using JavaScript keyword 'new',</b> a new JavaScript objects is created as follows:</p>
+           <p><b>var person = new Object();<br>
+            person.firstName = “Harry”;<br>
+            person.lastName = “Cole”;<br>
+            person.age = 50;</b></p><br>
+           <p><b>d. By using the 'Object.create()' method,</b> as it allows to choose the prototype 'object' for the object to be created, without the need to define a constructor function, as given below:</p>
+           <p><b>var Animal = {<br>
+            type: 'Invertebrates', <br>
+            displayType: function() { <br> 
+            console.log(this.type);<br>
+            }<br>
+           };<br>
+            var animal1 = Object.create(Animal);<br>
+            animal1.displayType(); // Output:Invertebrates<br>
+            var insect = Object.create(Animal);<br>
+            insect.type = 'Insects';<br>
+            insect.displayType(); <br>
+          // Output:Insects</b></p><br>
+           <p>To know more, Stay Tuned!</p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="box1">
+            <h2>About Author</h2>
+            <p><b>Bhavya</b>, an aspiring tech geek.</p>
+          </div>
+          <div class="box1">
+            <h3>Related Content</h3>
+            <div class="articles"><a href="">HTML</a></div><br>
+            <div class="articles"><a href="">CSS</a></div><br>
+            <div class="articles"><a href="">JavaScript</a></div><br>
+            <form>
+                <select name="blogs" id="blogs" value="Read">
+                            <option selected disabled>Read</option>
+                            <option value="Networking">Networking</option>
+                            <option value="evolution">Evolution of HTTP</option>
+                            <option value="protocols">Common Internet Protocols</option>
+                        </select><br><br>
+                        <input class="search" type="search" placeholder="Search...">
+                </form>
+          </div>
+          <div class="box1">
+            <h3>Follow | Connect</h3>
+            <a href="https://github.com/rajb99" target="_blank">Bhavya_github</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <h2>ADs</h2>
+      </div>
+</body>
+</html>
