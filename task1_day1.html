@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+       * {
+         box-sizing: border-box;
+        }
+
+body {
+  font-family: "Helvetica";
+  padding: 30px;
+  background: #f1e0e0;
+}
+
+.header {
+  padding: 1px;
+  font-size: 35px;
+  text-align: center;
+  background: #f1e0e0;
+}
+
+.left{
+  float: left;
+  width: 75%;
+}
+
+.right{
+  float: left;
+  width: 25%;
+  padding-left: 25px;
+}
+
+.articles {
+  background-color: #f7c7c7;
+  width: 100%;
+  padding: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 600px;
+    height: 300px;
+    float: inherit;
+}
+
+.box1 {
+  background-color: white;
+  padding: 25px;
+  margin-top: 25px;
+  text-decoration: none;
+}
+
+.box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer {
+  padding: 30px;
+  text-align: center;
+  background: #e9e6e6;
+  margin-top: 40px;
+}
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>BlogSite</h1>
+      </div>
+      <hr>
+      <div class="box">
+        <div class="left">
+          <div class="box1">
+            <h1>Difference between HTTP1.1 vs HTTP2</h1>
+            <p style="font-size: large;">Versions of the Internet Protocols, Feb 23, 2024</p>
+            <p style="font-size: larger;"><b>HTTP/1.1</b></p>
+            <p><b>HTTP (Hypertext Transfer Protocol)</b> is a data communications protocol, which is the language of web and acts as the foundation of the World Wide Web. There was a lack of standardisation and a variety of implementations following the introduction of the original version.<br><br> When <b>HTTP/1.1</b> was released in 1997, several enhancements were made. Additional cache controls and Content Negotiation, which supported various languages, content encodings, and content kinds, were among the features added to HTTP/1.1.</p>
+            <p style="font-size: larger;"><b>HTTP/2</b></p>
+            <p>  With the goal of lowering web page load latency through the use of strategies like compression, multiplexing, and prioritisation,<b> HTTP/2</b> was principally developed by <b>Google</b>. This standardisation initiative was supported from the start by a number of browsers, including Internet Explorer, Safari, Chrome, and Opera. Since 2015, the protocol has been adopted at a large rate, with particularly high rates among new sites, partly because of the browser's support.<br><br><b> HTTP/1's slow response time was well-known.</b> The protocol was becoming less effective as websites became more resource-intensive. The need to reduce latency and increase page load times grew over time. Google investigated these issues. Years later, HTTP/2—which is based on the SPDY protocol, was created to improve the Internet by addressing the intrinsic limitations of HTTP/1.1.</div>
+          <div class="box1">
+            <h2>HTTP1.1 vs HTTP2</h2>
+            <div><img src="https://assets-global.website-files.com/5ff66329429d880392f6cba2/6149cbd7fd4bdd7c82f55cc6_http1%20vs%20http2.png"></div>
+            <p><b><br><br>Major Difference</b></p>
+            <p>HTTP/2 uses the binary framing layer to wrap all messages in binary format while preserving HTTP semantics, such as verbs, methods, and headers, in contrast to HTTP/1.1, which maintains all requests and responses in plain text format. The underlying layer would then convert these communications into binary, even if an application level API would still provide messages in the standard HTTP formats. This guarantees that web apps developed before HTTP/2 will be able to interact with the new protocol and work normally.<br><br>The binary framing layer is the primary feature that sets HTTP/2 apart from HTTP/1.1. On the contrary, messages are sent as plain text via HTTP/1.1. Head of line blocking prevents all requests from being processed until it has all the resources it needs.</p>
+            <p><b><br>Multiplexing</b></p>
+            <p>HTTP/1.1 loads resources one after the other; hence, in the event that a resource is blocked, all subsequent resources are blocked as well. In contrast, HTTP/2 ensures that no resource blocks any other resource by allowing multiple streams of data to be sent simultaneously over a single TCP connection</p>
+            <p><b><br>Server push</b></p>
+            <p>In general, a server will only serve the content to a client device upon request from the client. Modern webpages, on the other hand, frequently require the client to request several dozen different resources, thus this strategy is not always feasible.<br><br> This issue is resolved by HTTP/2, which enables a server to "push" content to a client in advance of the client's request. In addition, the server notifies the client via message what pushed content is expected.
+            <p><b><br>Header compression</b></p>
+            <p>Smaller files load more rapidly than larger ones. Both HTTP/1.1 and HTTP/2 compress HTTP messages to make them smaller to speed up the performance. Nevertheless, HTTP/2 removes superfluous data from HTTP header packets using a more sophisticated compression technique called HPACK.<br><br> Every HTTP packet loses a few bytes as a result. Faster loading is achieved because those bytes pile up quickly, considering the number of HTTP packets required to load even a single webpage.</p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="box1">
+            <h2>About Author</h2>
+            <p><b>Bhavya</b>, an aspiring tech geek.</p>
+          </div>
+          <div class="box1">
+            <h3>Related Content</h3>
+            <div class="articles"><a href="">HTML</a></div><br>
+            <div class="articles"><a href="">CSS</a></div><br>
+            <div class="articles"><a href="">JavaScript</a></div><br>
+            <form>
+                <select name="blogs" id="blogs" value="Read">
+                            <option selected disabled>Read</option>
+                            <option value="Networking">Networking</option>
+                            <option value="evolution">Evolution of HTTP</option>
+                            <option value="protocols">Common Internet Protocols</option>
+                        </select><br><br>
+                        <input class="search" type="search" placeholder="Search...">
+                </form>
+          </div>
+          <div class="box1">
+            <h3>Follow | Connect</h3>
+            <a href="https://github.com/rajb99" target="_blank">Bhavya_github</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <h2>ADs</h2>
+      </div>
+</body>
+</html>
